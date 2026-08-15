@@ -1,0 +1,190 @@
+/* =========================
+   GOOGLE FONT
+========================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* =========================
+   GLOBAL
+========================= */
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section {
+  padding: 90px 0;
+}
+
+/* =========================
+   TITLES
+========================= */
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.section-title p {
+  color: #94a3b8;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+p {
+  color: #94a3b8;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 30px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #fff;
+  font-weight: 500;
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, .35);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #3b82f6;
+}
+
+.btn-outline:hover {
+  background: #3b82f6;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid {
+  display: grid;
+  gap: 25px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 18px;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2563eb;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width:992px) {
+
+  section {
+    padding: 80px 0;
+  }
+
+  .section-title h2 {
+    font-size: 34px;
+  }
+
+}
+
+@media (max-width:768px) {
+
+  .container {
+    padding: 0 18px;
+  }
+
+  section {
+    padding: 70px 0;
+  }
+
+  .section-title {
+    margin-bottom: 40px;
+  }
+
+  .section-title h2 {
+    font-size: 30px;
+  }
+
+}
+
+@media (max-width:480px) {
+
+  .container {
+    padding: 0 16px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  .section-title h2 {
+    font-size: 26px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,402 @@
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    position: relative;
+    background: #0f172a;
+    padding: 70px 32px 110px;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Soft glow in the background, echoes the navbar's blue accent */
+.hero-bg-glow {
+    position: absolute;
+    top: -220px;
+    right: -160px;
+    width: 560px;
+    height: 560px;
+    max-width: 100%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.18), transparent 70%);
+    pointer-events: none;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+/* Eyebrow tag */
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #3b82f6;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 7px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    margin-bottom: 24px;
+}
+
+.hero-eyebrow .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #3b82f6;
+}
+
+/* Title */
+.hero-title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: clamp(32px, 4.6vw, 50px);
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 22px;
+    letter-spacing: -0.01em;
+}
+
+.grad-text {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Intro paragraph */
+.hero-intro {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #94a3b8;
+    max-width: 480px;
+    margin-bottom: 36px;
+}
+
+/* Buttons */
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 28px;
+    border-radius: 8px;
+    font-size: 14.5px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(37, 99, 235, 0.35);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.btn-outline:hover {
+    border-color: #3b82f6;
+    color: #3b82f6;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   HERO VISUAL — animated code panel
+========================= */
+
+.hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 340px;
+    perspective: 1400px;
+}
+
+.code-panel {
+    width: 100%;
+    max-width: 380px;
+    background: #111a2e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transform-style: preserve-3d;
+    animation: floatPanel3D 6s ease-in-out infinite;
+    transition: transform 0.15s ease-out;
+    will-change: transform;
+}
+
+@keyframes floatPanel3D {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotateX(4deg) rotateY(-6deg);
+    }
+
+    50% {
+        transform: translateY(-14px) rotateX(-2deg) rotateY(4deg);
+    }
+}
+
+/* When the user actively moves the mouse, JS takes over the transform —
+   pause the idle float so the two don't fight each other */
+.hero-visual:hover .code-panel {
+    animation-play-state: paused;
+}
+
+.code-panel-bar {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 12px 16px;
+    background: #0c1322;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.code-panel-bar span.dot-red,
+.code-panel-bar span.dot-yellow,
+.code-panel-bar span.dot-green {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-red {
+    background: #ef4444;
+}
+
+.dot-yellow {
+    background: #eab308;
+}
+
+.dot-green {
+    background: #22c55e;
+}
+
+.code-panel-name {
+    margin-left: 8px;
+    font-size: 12px;
+    color: #64748b;
+    font-family: "Poppins", sans-serif;
+}
+
+.code-panel-body {
+    padding: 20px 20px 24px;
+    font-family: "Courier New", monospace;
+    font-size: 13.5px;
+    line-height: 1.85;
+    color: #cbd5e1;
+}
+
+.code-panel-body p {
+    margin: 0;
+}
+
+.code-panel-body .indent {
+    padding-left: 22px;
+}
+
+.c-comment {
+    color: #64748b;
+}
+
+.c-keyword {
+    color: #f472b6;
+}
+
+.c-var {
+    color: #e2e8f0;
+}
+
+.c-prop {
+    color: #93c5fd;
+}
+
+.c-string {
+    color: #34d399;
+}
+
+.cursor {
+    display: inline-block;
+    color: #3b82f6;
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Floating tech badges around the panel */
+.floating-badge {
+    position: absolute;
+    padding: 8px 14px;
+    background: #111a2e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-family: "Poppins", sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #e2e8f0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    z-index: 2;
+}
+
+.badge-react {
+    top: 6%;
+    left: -4%;
+    color: #61dafb;
+    animation: floatBadgeA 4s ease-in-out infinite;
+}
+
+.badge-node {
+    bottom: 14%;
+    left: -6%;
+    animation: floatBadgeB 4.5s ease-in-out infinite 0.6s;
+}
+
+.badge-db {
+    top: 44%;
+    right: -6%;
+    animation: floatBadgeC 5s ease-in-out infinite 1.1s;
+}
+
+/* Each badge floats on a slightly different axis/depth for a layered 3D feel */
+@keyframes floatBadgeA {
+
+    0%,
+    100% {
+        transform: translateY(0px) translateZ(40px) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-12px) translateZ(60px) rotate(2deg);
+    }
+}
+
+@keyframes floatBadgeB {
+
+    0%,
+    100% {
+        transform: translateY(0px) translateZ(20px) rotate(2deg);
+    }
+
+    50% {
+        transform: translateY(-9px) translateZ(45px) rotate(-2deg);
+    }
+}
+
+@keyframes floatBadgeC {
+
+    0%,
+    100% {
+        transform: translateY(0px) translateZ(55px) rotate(1deg);
+    }
+
+    50% {
+        transform: translateY(-13px) translateZ(30px) rotate(-1deg);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+    .hero {
+        padding: 130px 24px 80px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .hero-intro {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        min-height: 300px;
+    }
+
+    .floating-badge {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 120px 16px 60px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .code-panel-body {
+        font-size: 12.5px;
+        padding: 16px 16px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .code-panel,
+    .floating-badge,
+    .cursor {
+        animation: none;
+        transition: none;
+    }
+}
